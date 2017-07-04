@@ -1,0 +1,46 @@
+ML:
+1.Supervised Learning:
+The data that is exposed to the machine for learning is called training data, since it is used to train the machine to perform a given task. Since the machine learns using training data and under supervision, this kind of learning is called supervised learning.
+
+2.unsupervised learning
+Now for a moment let us consider the case of grouping news items together. Here we may not be able to provide news articles to the machine for training it because the nature of the data is too dynamic. Hence, in such cases we expect the machine to learn from the data in real time without supervision. Such learning is thus called unsupervised learning.
+
+3. What can a machine do after learning?
+Having learnt from the data, the machine can perform various kinds of tasks. For example, in the case of self-driven car, the machine slows down or stops when a human being/ obstacle is encountered. In order to do this, the machine needs to analyse real time data and PREDICT if the object in front of it is an obstacle or human being. 
+In the case of news updates, the machine is expected to GROUP newer articles in real time. 
+
+Some other examples where we see machines perform these kinds of tasks are:
+RECOMMEND products to retail customers based on their buying pattern
+DETERMINE if a new bank loan applicant might default on payments
+DETERMINE how successful a marketing/advertisement campaign would be
+PREDICT the likelihood of occurrence of rain, cyclones and other phenomenon
+DETERMINE which locality a mail should be dispatched to, by reading the handwriting of the senders
+
+4.PREDICTION:
+Consider the case of the self-driven car where the machine needs to predict if the object in front of it is a human being or not, and react accordingly. In this case, the machine has to predict one of the two values - Human and Non-Human. 
+In the case where the machine needs to predict how successful a marketing/advertisement campaign would be, it needs to determine a score based on attributes such as its budget, season, duration, etc.
+From the above examples, we can observe that a machine makes 2 kinds of predictions - a category(e.g. human/non-human) and a quantity(e.g. success score). In order to make these predictions, the machine typically builds a mathematical function(model) from the data. It then applies this model on newer data to make predictions. The model being built varies based on the kind of prediction that the machine needs to make.
+When predicting a category, the models built are referred to as CLASSIFICATION models whereas when predicting a quantity the models built are referred to as REGRESSION models.
+Classification models are built with the help of several algorithms such as k-Nearest Neighbors(kNN), Decision Trees, Support Vector Machines, Random Forest, Logistic regression, etc.
+Regression models are built using linear/non-linear regression algorithms.
+
+5. Arithematic mean/mean = sume of values / no. of values.
+6. Median : The median is the value separating the higher half of a data samplefrom the lower half(data must be sorted in ascending order). In simple terms, it may be thought of as the "middle" value of a data set
+ eg : a)1,3,3,6,7,8,9 ==> median = 6 
+	  b)1,2,3,4,5,6,7,8 ==> median = (4+5)/2 = 4.5
+	  The basic advantage of the median in describing data compared to the mean (often simply described as the "average") is that it is not skewed so much by extremely large or small values, and so it may give a better idea of a 'typical' value. For example, in understanding statistics like household income or assets which vary greatly, a mean may be skewed by a small number of extremely high or low values. Median income, for example, may be a better way to suggest what a 'typical' income is.
+Medians of different distribution:
+The median of a symmetric distribution which possesses a mean μ also takes the value μ.
+The median of a normal distribution with mean μ and variance σ2 is μ. In fact, for a normal distribution, mean = median = mode.
+The median of a uniform distribution in the interval [a, b] is (a + b) / 2, which is also the mean.
+The median of a Cauchy distribution with location parameter x0 and scale parameter y is x0, the location parameter.
+The median of a power law distribution x−a, with exponent a > 1 is 21/(a − 1)xmin, where xmin is the minimum value for which the power law holds[8]
+The median of an exponential distribution with rate parameter λ is the natural logarithm of 2 divided by the rate parameter: λ−1ln 2.
+The median of a Weibull distribution with shape parameter k and scale parameter λ is λ(ln 2)1/k.
+
+7.Regression Analysis:
+Regression analysis is a statistical process for estimating the relationships among variables. It includes many techniques for modeling and analyzing several variables, when the focus is on the relationship between a dependent variable and one or more independent variables (or 'predictors'). (Source: Wikipedia: Regression_Analysis)
+Regression analysis focuses on building a model that can be used to predict the value of the dependent variable based on the predictor variables.
+The regression model is represented using a mathematical model of form y= f(X) , where y is the dependent variable and X is the set of predictor variables (x1, x2… xn).
+Where   are said to be the regression coefficients and  accounts for the error in prediction. The regression coefficients and the error in prediction are real numbers. We shall learn and refer to some of these equations as we progress further.
+When a regression model is of linear form, then such regression is called linear regression. Similarly, when a regression model is of non-linear form, then such regression is called non-linear regression.
