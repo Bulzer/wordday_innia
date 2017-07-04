@@ -1,0 +1,9 @@
+R:
+
+1.Flury Package: contains datasets from Bernard flury(while repository is CRAN)
+2.plot(computers$Units,computers$Minutes)
+  title(main="plot of time taken to repair computer vs no. of units of computers")
+  
+  *--> above 2 lines of code ==> 'computers' is a dataframe(table) and 'Units' and 'Minutes' are the colums and a graph is plotted b/w them with Units being the X-axis.
+3.	abline --> to add an extra plot(line) in existing Plot
+	legend --> adds a legend box to a plot.
