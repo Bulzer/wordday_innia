@@ -1,0 +1,15 @@
+BD Questions:
+
+o	Developed the PIG Scripts that transform the unstructured non-financial files into some semi-structured format.
+o	Configured FLUME agents using which the archived files dump will moved into HDFS for further analysis.
+o	Developed fine-tuned PIG scripts and HIVE queries for initial analysis and ad hoc aggregations 
+o	Debugging and Log analysis of HIVEQL queries and PIG scripts
+
+
+1) Explain what are the basic parameters of a Mapper?
+The basic parameters of a Mapper are
+•	LongWritable and Text
+•	Text and IntWritable
+•	(i.e a mapper takes i/p as LongWritable and Text and gives o/p as Text and IntWritable)
+
+2)
