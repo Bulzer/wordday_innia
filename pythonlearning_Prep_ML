@@ -1,0 +1,38 @@
+go to the folder where we want to run the jupyter in cmd and type "jupyter notebook"
+Once the Terminal opens go to Python [conda root]
+Type %load pythonfilename to load already existing python file eg: %load trigram.py
+
+# you can store an arbitrary python object via pickle
+
+-------------------------
+-->Import the pandas package, then use the "read_csv" function to read CSV file (import pandas as pd eg:train = pd.read_csv("HFAppsTrain_28.csv") and the we can perform various operations on train like train.shape ,train.columns.values etc)
+-->Using Beautifulsoup(from bs4 import BeautifulSoup,version 4 ==> bs4)
+   (Beautiful Soup 3 only works on Python 2.x, but Beautiful Soup 4 also works on Python 3.x. Beautiful Soup 4 is faster, has more features, and works with third-party parsers like lxml and html5lib)
+-->Beautiful Soup is an HTML/XML parser for Python that can turn even invalid markup into a parse tree.It provides simple, idiomatic ways of navigating, searching, and modifying the 	parse tree.The BeautifulSoup class is full of web-browser-like heuristics for divining the intent of HTML authors. But XML doesn't have a fixed tag set, so those heuristics don't apply. So BeautifulSoup doesn't do XML very well.
+	from BeautifulSoup import BeautifulSoup          # For processing HTML
+	from BeautifulSoup import BeautifulStoneSoup     # For processing XML
+	import BeautifulSoup                             # To get everything
+	If you get the message "No module named BeautifulSoup", but you know Beautiful Soup is installed, you're probably using the Beautiful Soup 4 beta. Use this code instead: 
+	from bs4 import BeautifulSoup # To get everything
+	(documentation --> https://www.crummy.com/software/BeautifulSoup/bs3/documentation.html)
+-->Use regular expressions to do a find-and-replace(import re)
+	letters_only = re.sub("[^a-zA-Z]",           # The pattern to search for
+                      " ",                       # The pattern to replace it with
+                      example1.get_text() )      # The text to search for
+	print (letters_only)
+	lower_case = letters_only.lower()            # Convert to lower case
+	words = lower_case.split()                   # Split into words
+-->Using NLTK(import nltk)
+	print(nltk.__version__)
+	from nltk.corpus import stopwords #; Import the stop word list corus
+	print (stopwords.words("english"))
+	# Remove stop words from "words"
+	words = [w for w in words if not w in stopwords.words("english")]
+	print (words)
+-->In Python, searching a set is much faster than searching a list, so convert the stop words to a set
+    stops = set(stopwords.words("english"))
+	#Remove stop words
+    meaningful_words = [w for w in words if not w in stops]
+--># Creating the bag of words...\n ==> using Count vectorizer(from sklearn.feature_extraction.text import CountVectorizer)
+	# Initialize the "CountVectorizer" object, which is scikit-learn's bag of words tool.
+	vectorizer = CountVectorizer(analyzer = "word",tokenizer = None,preprocessor = None,stop_words = None,max_features = 5000,vocabulary=vocab_list)
