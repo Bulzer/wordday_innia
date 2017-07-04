@@ -1,0 +1,311 @@
+NLP:
+The Natural Language Processing models or NLP models are a separate segment which deals with instructed data
+
+POS(parts of speech) Taggers:
+
+POS tagging  is the process of marking up a word in a text (corpus) as corresponding to a particular part of speech, based on both its definition and its context—i.e., its relationship with adjacent and related words in a phrase, sentence, or paragraph.
+corpus = text.
+
+Tagger/classifier I used in project : Maxent tagger(maximum entropy tagger/classifier)
+http://new.galalaly.me/2011/05/tagging-text-with-stanford-pos-tagger-in-java-applications/
+POS-tagging algorithms fall into two distinctive groups: rule-based and stochastic. E. Brill's tagger, one of the first and most widely used English POS-taggers, employs rule-based algorithms.
+In natural language processing, multinomial LR classifiers(eg:Maxent tagger) are commonly used as an alternative to naive Bayes classifiers because they do not assume statistical independence of the random variables (commonly known as features) that serve as predictors. However, learning in such a model is slower than for a naive Bayes classifier, and thus may not be appropriate given a very large number of classes to learn. In particular, learning in a Naive Bayes classifier is a simple matter of counting up the number of co-occurrences of features and classes, while in a maximum entropy classifier the weights, which are typically maximized using maximum a posteriori (MAP) estimation, must be learned using an iterative procedure.
+
+The following is a list of some of the most commonly researched tasks in NLP
+Note that some of these tasks have direct real-world applications, while others more commonly serve as subtasks that are used to aid in solving larger tasks.
+Automatic summarization
+
+Produce a readable summary of a chunk of text. Often used to provide summaries of text of a known type, such as articles in the financial section of a newspaper.
+
+Coreference resolution
+
+Given a sentence or larger chunk of text, determine which words ("mentions") refer to the same objects ("entities"). Anaphora resolution is a specific example of this task, and is specifically concerned with matching up pronouns with the nouns or names that they refer to. The more general task of coreference resolution also includes identifying so-called "bridging relationships" involving referring expressions. For example, in a sentence such as "He entered John's house through the front door", "the front door" is a referring expression and the bridging relationship to be identified is the fact that the door being referred to is the front door of John's house (rather than of some other structure that might also be referred to).
+
+Discourse analysis
+
+This rubric includes a number of related tasks. One task is identifying the discourse structure of connected text, i.e. the nature of the discourse relationships between sentences (e.g. elaboration, explanation, contrast). Another possible task is recognizing and classifying the speech acts in a chunk of text (e.g. yes-no question, content question, statement, assertion, etc.).
+
+Machine translation
+
+Automatically translate text from one human language to another. This is one of the most difficult problems, and is a member of a class of problems colloquially termed "AI-complete", i.e. requiring all of the different types of knowledge that humans possess (grammar, semantics, facts about the real world, etc.) in order to solve properly.
+
+Morphological segmentation
+
+Separate words into individual morphemes and identify the class of the morphemes. The difficulty of this task depends greatly on the complexity of the morphology (i.e. the structure of words) of the language being considered. English has fairly simple morphology, especially inflectional morphology, and thus it is often possible to ignore this task entirely and simply model all possible forms of a word (e.g. "open, opens, opened, opening") as separate words. In languages such as Turkish or Manipuri,[6] a highly agglutinated Indian language, however, such an approach is not possible, as each dictionary entry has thousands of possible word forms.
+
+Named entity recognition (NER)
+
+Given a stream of text, determine which items in the text map to proper names, such as people or places, and what the type of each such name is (e.g. person, location, organization). Note that, although capitalization can aid in recognizing named entities in languages such as English, this information cannot aid in determining the type of named entity, and in any case is often inaccurate or insufficient. For example, the first word of a sentence is also capitalized, and named entities often span several words, only some of which are capitalized. Furthermore, many other languages in non-Western scripts (e.g. Chinese or Arabic) do not have any capitalization at all, and even languages with capitalization may not consistently use it to distinguish names. For example, German capitalizes all nouns, regardless of whether they refer to names, and French and Spanish do not capitalize names that serve as adjectives.
+
+Natural language generation
+
+Convert information from computer databases into readable human language.
+
+Natural language understanding
+
+Convert chunks of text into more formal representations such as first-order logic structures that are easier for computer programs to manipulate. Natural language understanding involves the identification of the intended semantic from the multiple possible semantics which can be derived from a natural language expression which usually takes the form of organized notations of natural languages concepts. Introduction and creation of language metamodel and ontology are efficient however empirical solutions. An explicit formalization of natural languages semantics without confusions with implicit assumptions such as closed-world assumption (CWA) vs. open-world assumption, or subjective Yes/No vs. objective True/False is expected for the construction of a basis of semantics formalization.[7]
+
+Optical character recognition (OCR)
+
+Given an image representing printed text, determine the corresponding text.
+
+Part-of-speech tagging
+
+Given a sentence, determine the part of speech for each word. Many words, especially common ones, can serve as multiple parts of speech. For example, "book" can be a noun ("the book on the table") or verb ("to book a flight"); "set" can be a noun, verb or adjective; and "out" can be any of at least five different parts of speech. Some languages have more such ambiguity than others. Languages with little inflectional morphology, such as English are particularly prone to such ambiguity. Chinese is prone to such ambiguity because it is a tonal language during verbalization. Such inflection is not readily conveyed via the entities employed within the orthography to convey intended meaning.
+
+Parsing
+
+Determine the parse tree (grammatical analysis) of a given sentence. The grammar for natural languages is ambiguous and typical sentences have multiple possible analyses. In fact, perhaps surprisingly, for a typical sentence there may be thousands of potential parses (most of which will seem completely nonsensical to a human).
+
+Question answering
+
+Given a human-language question, determine its answer. Typical questions have a specific right answer (such as "What is the capital of Canada?"), but sometimes open-ended questions are also considered (such as "What is the meaning of life?"). Recent works have looked at even more complex questions.[8]
+
+Relationship extraction
+
+Given a chunk of text, identify the relationships among named entities (e.g. who is married to whom).
+
+Sentence breaking (also known as sentence boundary disambiguation)
+
+Given a chunk of text, find the sentence boundaries. Sentence boundaries are often marked by periods or other punctuation marks, but these same characters can serve other purposes (e.g. marking abbreviations).
+
+Sentiment analysis
+
+Extract subjective information usually from a set of documents, often using online reviews to determine "polarity" about specific objects. It is especially useful for identifying trends of public opinion in the social media, for the purpose of marketing.
+
+Speech recognition
+
+Given a sound clip of a person or people speaking, determine the textual representation of the speech. This is the opposite of text to speech and is one of the extremely difficult problems colloquially termed "AI-complete" (see above). In natural speech there are hardly any pauses between successive words, and thus speech segmentation is a necessary subtask of speech recognition (see below). Note also that in most spoken languages, the sounds representing successive letters blend into each other in a process termed coarticulation, so the conversion of the analog signal to discrete characters can be a very difficult process.
+
+Speech segmentation
+
+Given a sound clip of a person or people speaking, separate it into words. A subtask of speech recognition and typically grouped with it.
+
+Topic segmentation and recognition
+
+Given a chunk of text, separate it into segments each of which is devoted to a topic, and identify the topic of the segment.
+
+Word segmentation
+
+Separate a chunk of continuous text into separate words. For a language like English, this is fairly trivial, since words are usually separated by spaces. However, some written languages like Chinese, Japanese and Thai do not mark word boundaries in such a fashion, and in those languages text segmentation is a significant task requiring knowledge of the vocabulary and morphology of words in the language.
+
+Word sense disambiguation
+
+Many words have more than one meaning; we have to select the meaning which makes the most sense in context. For this problem, we are typically given a list of words and associated word senses, e.g. from a dictionary or from an online resource such as WordNet.
+
+In some cases, sets of related tasks are grouped into subfields of NLP that are often considered separately from NLP as a whole. Examples include:
+
+Information retrieval (IR)
+
+This is concerned with storing, searching and retrieving information. It is a separate field within computer science (closer to databases), but IR relies on some NLP methods (for example, stemming). Some current research and applications seek to bridge the gap between IR and NLP.
+
+Information extraction (IE)
+
+This is concerned in general with the extraction of semantic information from text. This covers tasks such as named entity recognition, Coreference resolution, relationship extraction, etc.
+
+Speech processing
+
+This covers speech recognition, text-to-speech and related tasks.
+
+Other tasks include:
+1.Native-language identification
+2.Stemming
+3.Text simplification
+4.Text-to-speech
+5.Text-proofing
+6.Natural language search
+7.Query expansion
+8.Automated essay scoring
+9.Truecasing
+
+Interview:
+The natural language processing interview questions will also test
+familiarity with specialized tools and experience with projects working with natural language data
+such as nltk (Python), Apache OpenNLP or GATE.
+
+Role specific Questions:
+(Natural language processing)
+What is part of speech (POS) tagging? What is the simplest approach to building a POS
+tagger that you can imagine?
+How would you build a POS tagger from scratch given a corpus of annotated sentences?
+How would you deal with unknown words?
+How would you train a model that identifies whether the word “Apple” in a sentence
+belongs to the fruit or the company?
+How would you find all the occurrences of quoted text in a news article?
+How would you build a system that auto corrects text that has been generated by a speech
+recognition system?
+What is latent semantic indexing and where can it be applied?
+How would you build a system to translate English text to Greek and vice-versa?
+How would you build a system that automatically groups news articles by subject?
+What are stop words? Describe an application in which stop words should be removed.
+How would you design a model to predict whether a movie review was positive or negative?
+
+(Related fields such as information theory, linguistics and information retrieval)
+What is entropy? How would you estimate the entropy of the English language?
+What is a regular grammar? Does this differ in power to a regular expression and if so, in
+what way?
+What is the TF-IDF score of a word and in what context is this useful?
+How does the PageRank algorithm work?
+What is dependency parsing?
+What are the difficulties in building and using an annotated corpus of text such as the
+Brown Corpus and what can be done to mitigate them?
+
+(Tools and languages)
+What tools for training NLP models (nltk, Apache OpenNLP, GATE, MALLET etc…) have
+you used?
+Do you have any experience in building ontologies?
+Are you familiar with WordNet or other related linguistic resources?
+Do you speak any foreign languages?
+
+
+
+
+The questions were a mix of NLP and ML.
+
+Which is better to use while extracting features character n-grams or word n-grams? Why?
+What is a POS tagger? How can you built one?
+What is dimensionality reduction?
+Explain the working of SVM/NN/Maxent algorithms
+Which is a better algoritm for POS tagging - SVM or hidden markov models ? why?
+What packages are you aware of in python which are used in NLP and ML?
+What are conditional random fields ?
+When can you use Naive Bayes algorithm for training, what are its advantages anddisadvantages
+---------------------------------------------------------------------------------------------------------
+Though NLP tasks are obviously very closely intertwined, they are frequently, for convenience, subdivided into categories; a coarse division is given below.
+
+(1)Syntax:
+
+Lemmatisation:
+Lemmatisation (or lemmatization) in linguistics is the process of grouping together the inflected forms of a word so they can be analysed as a single item, identified by the word's lemma, or dictionary form. lemmatisation is the algorithmic process of determining the lemma of a word based on its intended meaning. Unlike stemming, lemmatisation depends on correctly identifying the intended part of speech and meaning of a word in a sentence, as well as within the larger context surrounding that sentence, such as neighboring sentences or even an entire document. As a result, developing efficient lemmatisation algorithms is an open area of research.For example, in English, the verb 'to walk' may appear as 'walk', 'walked', 'walks', 'walking'. The base form, 'walk', that one might look up in a dictionary, is called the lemma for the word.Lemmatisation is closely related to stemming. The difference is that a stemmer operates on a single word without knowledge of the context, and therefore cannot discriminate between words which have different meanings depending on part of speech. However, stemmers are typically easier to implement and run faster. The reduced "accuracy" may not matter for some applications. In fact, when used within information retrieval systems, stemming improves query recall accuracy, or true positive rate, when compared to lemmatisation. Nonetheless, stemming reduces precision, or true negative rate, for such systems.[4]
+
+For instance:
+1.The word "better" has "good" as its lemma. This link is missed by stemming, as it requires a dictionary look-up.
+2.The word "walk" is the base form for word "walking", and hence this is matched in both stemming and lemmatisation.
+3.The word "meeting" can be either the base form of a noun or a form of a verb ("to meet") depending on the context; e.g., "in our last meeting" or "We are meeting again tomorrow". Unlike stemming, lemmatisation attempts to select the correct lemma depending on the context.
+--------------------------
+Morphological segmentation:
+Separate words into individual morphemes and identify the class of the morphemes. The difficulty of this task depends greatly on the complexity of the morphology (i.e. the structure of words) of the language being considered. English has fairly simple morphology, especially inflectional morphology, and thus it is often possible to ignore this task entirely and simply model all possible forms of a word (e.g. "open, opens, opened, opening") as separate words.
+
+Morphemes:
+A morpheme is the smallest meaningfull grammatical unit in a language.A morpheme is not identical to a word, and the principal difference between the two is that a morpheme may or may not stand alone, whereas a word, by definition, is freestanding. When it stands by itself, it is considered as a root(free morphene) because it has a meaning of its own (e.g. the morpheme cat) and when it depends on another morpheme to express an idea, it is an affix because it has a grammatical function (e.g. the –s in cats to indicate that it is plural),hence called as bound morphene.Every word comprises one or more morphemes.Most bound morphemes in English are affixes, particularly prefixes and suffixes. Examples of suffixes are -tion, -ation, -ible, -ing, etc. Bound morphemes that are not affixes are called cranberry morphemes.
+
+Bound morphemes can be further classified as derivational or inflectional
+
+Derivational morphemes:
+Derivational morphemes, when combined with a root, change either the semantic meaning or part of speech of the affected word. For example, in the word happiness, the addition of the bound morpheme -ness to the root happy changes the word from an adjective (happy) to a noun (happiness). In the word unkind, un- functions as a derivational morpheme, for it inverts the meaning of the word formed by the root kind. Generally the affixes used with a root word are bound morphemes.
+
+Inflectional morphemes:
+Inflectional morphemes modify a verb's tense, aspect, mood, person, or number, or a noun's, pronoun's or adjective's number, gender or case, without affecting the word's meaning or class (part of speech). Examples of applying inflectional morphemes to words are adding -s to the root dog to form dogs and adding -ed to wait to form waited. An inflectional morpheme changes the form of a word. In English, there are eight inflections
+--------------------------
+Part-of-speech tagging:
+Given a sentence, determine the part of speech for each word. Many words, especially common ones, can serve as multiple parts of speech. For example, "book" can be a noun ("the book on the table") or verb ("to book a flight"); "set" can be a noun, verb or adjective; and "out" can be any of at least five different parts of speech. Some languages have more such ambiguity than others. Languages with little inflectional morphology, such as English are particularly prone to such ambiguity. Chinese is prone to such ambiguity because it is a tonal language during verbalization. Such inflection is not readily conveyed via the entities employed within the orthography to convey intended meaning.
+
+---------------------------
+Parsing:
+Determine the parse tree (grammatical analysis) of a given sentence
+
+Parse Tree:
+A parse tree or parsing tree or derivation tree or concrete syntax tree is an ordered, rooted tree that represents the syntactic structure of a string according to some context-free grammar.
+2 types of parse trees:
+a)constituency based b)Dependency based parse tree
+a)constituency based:
+The constituency-based parse trees of constituency grammars (= phrase structure grammars) distinguish between terminal and non-terminal nodes. The interior nodes are labeled by non-terminal categories of the grammar, while the leaf nodes are labeled by terminal categories. The image below represents a constituency-based parse tree; it shows the syntactic structure of the English sentence John hit the ball:
+    S
+/ 	\
+N       VP
+.     /    \
+.    V      NP
+.    .     /  \
+.    .    D    N
+.    .    .    . 
+John Hit the ball
+
+The parse tree is the entire structure, starting from S and ending in each of the leaf nodes (John, hit, the, ball). The following abbreviations are used in the tree:
+S for sentence, the top-level structure in this example
+NP for noun phrase. The first (leftmost) NP, a single noun "John", serves as the subject of the sentence. The second one is the object of the sentence.
+VP for verb phrase, which serves as the predicate
+V for verb. In this case, it's a transitive verb hit.
+D for determiner, in this instance the definite article "the"
+N for noun.
+
+b)Dependency based parse tree:
+The dependency-based parse trees of dependency grammars see all nodes as terminal, which means they do not acknowledge the distinction between terminal and non-terminal categories
+---------------------------
+Sentence breaking (also known as sentence boundary disambiguation):
+It is the problem in natural language processing of deciding where sentences begin and end.However sentence boundary identification is challenging because punctuation marks are often ambiguous. For example, a period may denote an abbreviation, decimal point, an ellipsis, or an email address – not the end of a sentence.
+The standard 'vanilla' approach to locate the end of a sentence:[clarification needed]
+(a) If it's a period, it ends a sentence.(b) If the preceding token is in the hand-compiled list of abbreviations, then it doesn't end a sentence.(c) If the next token is capitalized, then it ends a sentence.
+This strategy gets about 95% of sentences correct.Things such as shortened names, e.g. "D. H. Lawrence" (with whitespaces between the individual words that form the full name), idiosyncratic orthographical spellings used for stylistic purposes (often referring to a single concept, e.g. an entertainment product title like ".hack//SIGN") and usage of non-standard punctuation (or non-standard usage of punctuation) in a text often fall under the remaining 5%.
+
+Another approach is to automatically learn a set of rules from a set of documents where the sentence breaks are pre-marked. Solutions have been based on a maximum entropy model.[3] The SATZ architecture uses a neural network to disambiguate sentence boundaries and achieves 98.5% accuracy.
+-----------------------------
+Stemming:
+stemming is the process of reducing inflected (or sometimes derived) words to their word stem, base or root form.
+--------------------------
+Word segmentation:
+Separate a chunk of continuous text into separate words
+--------------------------
+
+(2) Semantics:
+
+Named entity recognition (NER):
+Given a stream of text, determine which items in the text map to proper names, such as people or places, and what the type of each such name is (e.g. person, location, organization).Note that, although capitalization can aid in recognizing named entities in languages such as English, this information cannot aid in determining the type of named entity, and in any case is often inaccurate or insufficient.
+---------------------------
+Natural language generation:
+Convert information from computer databases or semantic intents into readable human language.
+---------------------------
+Natural language understanding:
+Convert chunks of text into more formal representations such as first-order logic structures that are easier for computer programs to manipulate. Natural language understanding involves the identification of the intended semantic from the multiple possible semantics which can be derived from a natural language expression which usually takes the form of organized notations of natural languages concepts. Introduction and creation of language metamodel and ontology are efficient however empirical solutions. An explicit formalization of natural languages semantics without confusions with implicit assumptions such as closed-world assumption (CWA) vs. open-world assumption, or subjective Yes/No vs. objective True/False is expected for the construction of a basis of semantics formalization.
+
+First-Order Logic:
+also known as first-order predicate calculus and predicate logic – is a collection of formal systems used in mathematics, philosophy, linguistics, and computer science. First-order logic uses quantified variables over non-logical objects and allows the use of sentences that contain variables, so that rather than propositions such as Socrates is a man one can have expressions in the form "there exists X such that X is Socrates and X is a man" where there exists is a quantifier and X is a variable.This distinguishes it from propositional logic, which does not use quantifiers.
+-------------------------------
+Optical character recognition (OCR):
+Given an image representing printed text, determine the corresponding text.
+-------------------------------
+Question answering:
+Given a human-language question, determine its answer. Typical questions have a specific right answer (such as "What is the capital of Canada?"), but sometimes open-ended questions are also considered (such as "What is the meaning of life?"). Recent works have looked at even more complex questions
+------------------------------
+Recognizing Textual entailment:
+Given two text fragments, determine if one being true entails the other, entails the other's negation, or allows the other to be either true or false.
+----------------------------
+Relationship extraction:
+Given a chunk of text, identify the relationships among named entities (e.g. who is married to whom).
+---------------------------
+Sentiment analysis:
+Extract subjective information usually from a set of documents, often using online reviews to determine "polarity" about specific objects. It is especially useful for identifying trends of public opinion in the social media, for the purpose of marketing.
+--------------------------
+Word sense disambiguation:
+Many words have more than one meaning; we have to select the meaning which makes the most sense in context. For this problem, we are typically given a list of words and associated word senses, e.g. from a dictionary or from an online resource such as WordNet.
+--------------------------------------------------------
+(3) Discourse:
+
+Automatic summarization:
+Produce a readable summary of a chunk of text. Often used to provide summaries of text of a known type, such as articles in the financial section of a newspaper.
+------------------------------------
+(4) Speech:
+
+Speech recognition:
+Given a sound clip of a person or people speaking, determine the textual representation of the speech. This is the opposite of text to speech and is one of the extremely difficult problems colloquially termed "AI-complete" (see above). In natural speech there are hardly any pauses between successive words, and thus speech segmentation is a necessary subtask of speech recognition (see below). Note also that in most spoken languages, the sounds representing successive letters blend into each other in a process termed coarticulation, so the conversion of the analog signal to discrete characters can be a very difficult process.
+
+Speech segmentation:
+Given a sound clip of a person or people speaking, separate it into words. A subtask of speech recognition and typically grouped with it.
+
+Text-to-speech:
+NA
+-----------------------------------------------------------
+NLTK:
+NLTK supports classification, tokenization, stemming, tagging, parsing, and semantic reasoning functionalities.
+
+Open NLP:
+The Apache OpenNLP library is a machine learning based toolkit for the processing of natural language text. It supports the most common NLP tasks, such as tokenization, sentence segmentation, part-of-speech tagging, named entity extraction, chunking, parsing, and coreference resolution.
+
+GATE:
+General Architecture for Text Engineering or GATE is a Java suite of tools.GATE has been compared to NLTK, R and RapidMiner.[2] As well as being widely used in its own right, it forms the basis of the KIM semantic platform.
+GATE includes an information extraction system called ANNIE (A Nearly-New Information Extraction System) which is a set of modules comprising a tokenizer, a gazetteer, a sentence splitter, a part of speech tagger, a named entities transducer and a coreference tagger. ANNIE can be used as-is to provide basic information extraction functionality, or provide a starting point for more specific tasks.
+Plugins are included for machine learning with Weka, RASP, MAXENT, SVM Light, as well as a LIBSVM integration and an in-house perceptron implementation, for managing ontologies like WordNet, for querying search engines like Google or Yahoo, for part of speech tagging with Brill or TreeTagger, and many more.
+
+
+LDA:
+In natural language processing, latent Dirichlet allocation (LDA) is a generative statistical model that allows sets of observations to be explained by unobserved groups that explain why some parts of the data are similar. For example, if observations are words collected into documents, it posits that each document is a mixture of a small number of topics and that each word's creation is attributable to one of the document's topics.
+
