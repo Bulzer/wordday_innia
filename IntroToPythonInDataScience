@@ -1,0 +1,20 @@
+Intro to Python in Data Science:
+
+1)type(variable_name) ==> type fn gives the data type of the variable.
+2)we cant concatinate diff datatypes in python,we have to type cast them to add
+  Eg :print ("my BMI is : " + BMI) ==> this will throw compilation error,hence we need to type catt BMI(float type) to String
+     i.e print ("my BMI is : " + str(BMI)) ==> o/p my BMI is : 20.798281126222715
+     lly we can do below things as well
+      1.print("I can add integers, like " + str(5) + " to strings.") ==> o/p =I can add integers, like 5 to strings.
+    **2. print("I said " + ("Hey " * 2) + "Hey!")                    ==> o/p =I said Hey Hey Hey!
+   ***3. print(True + False)                                         ==> o/p =1
+3)variable declaration with values
+    ==> int = 1 (integers)
+    ==> float = 1.1 (real numbers)
+    ==> str = "Bulzer" (string or text values)
+    ==> bool = True (true or false)
+4) One more data type is lists
+    --> lists can store values of diff data types
+    --> lists are enclosed in sq. braces
+    --> lists can contain other lists in them
+    -->Eg: list1 = ["Bulzer",24,"human"]
