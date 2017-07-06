@@ -14,8 +14,50 @@ Intro to Python in Data Science:
     ==> float = 1.1 (real numbers)
     ==> str = "Bulzer" (string or text values)
     ==> bool = True (true or false)
-4) One more data type is lists(List is a compount data type(i.e it can have diff. type of values))
+4)Lists:
+One more data type is lists(List is a compount data type(i.e it can have diff. type of values))
     --> lists can store values of diff data types
     --> lists are enclosed in sq. braces
     --> lists can contain other lists in them
     -->Eg: list1 = ["Bulzer",24,"human"]
+    --> python uses indexes to access the elements of the list (Zero based indexing).we can also use Slicing to access the elements in a list(o/p after slicing is also a List)
+        ==> print(list1[0]) ==> o/p = Bulzer
+        ==> print(list1[1]) ==> o/p = 24
+        ==> print(list1[2]) ==> o/p = Human
+      **we can also access the elements using -ve indexes(we mostle use this to access the elements from the last)
+        ==> print(list1[-1]) ==> o/p = human
+        ==> print(list1[-2]) ==> o/p = 24 
+      **==> to get a value present in a list which is present in another list ==> print(lista[2][2])
+    Slicing:
+        Eg: list2 = ["Bulzer",24,"human",1,2,3,4,5,6]
+      **==> print(list2[2:4])  ==> o/p = ['human', 1] 
+      **i.e as we gave 2:4 ==> starts with index value as 2(inclusive) and end with index value as 4(exclusive)
+        ==>print(list2[:4]) ==> prints all the elements from 0th indes till 3rd index
+        ==>print(list2[4:]) ==> prints all the elements from index no. 4 till last element(including the last element as well
+5)List Manipulations(interchange or add or remove elements):
+        ==> change element ==> list2[2]=23 ==> gets changed
+                        lly ==> list2[0:2]=['bulzers',24] ==> 2 elements gets  changed 
+        ==> to add ==> list3 = list2[]+ ["sid",1,1,] ==> lly we can add 2 lists using + sign
+        ==> to delete ==>use del() function Eg: del(list2[3])
+     ***==>1.	Understanding how Python lists actually work behind the scenes becomes pretty important now. What actually happens when you create a new list, `x` [‘a’,’b’,’c’], like this?
+3.	Well, in a simplified sense, you're storing a list in your computer memory, and store
+4.	the 'address' of that list, so where the list is in your computer memory, in `x`. This means
+5.	that `x` does not actually contain all the list elements, it rather contains a reference
+6.	to the list. For basic operations, the difference is not that important, but it becomes more
+7.	so when you start copying lists. Let me clarify this with an example.
+8.	Let's store the list `x` as a new variable `y`, by simply using the equals sign:  y = x
+9.	Let's now change the element with index one in the list `y`, as follows:  y[1] =”z” and print y ==>o/p = [‘a’,’z’,’c’],
+	The funky thing is that if you now check out `x` again, also here the second element is changed  print X also gives o/p = [‘a’,’z’,’c’],
+That's because when you copied x to y with the equals sign, you copied the reference
+to the list, not the actual values themselves. When you're updating an element the list,
+though, it's one and the same list in the computer memory your changing. Both `x` and
+`y` point to this list, so the update is visible from both.
+If you want to create a list `y` that points to a new list in the memory with the same
+variables, you'll need to use something else than the equals sign. You can use the `list()`
+function, like this, or use slicing to select all list elements explicitly.
+If you now make a change to the list `y` points to, `x` is not affected:
+If this was a bit too much to take in, don't worry. The exercises will help you understand
+
+
+
+        
