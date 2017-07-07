@@ -80,20 +80,38 @@ One more data type is lists(List is a compount data type(i.e it can have diff. t
 
 7)Methods:
 Functions that belong to objects are called methods 
-  Eg: a = 1.0 b = "1" c = [1] ==> all a,b,c are Objects(variables as well,every thing in python is an object) of type float, str and list respectively
-  hence we have fns like capitalize(),replace(),etc for string type objects 
-  and fns like bit_length(),conjugate(),etc for float type objects 
-  and fns like index(),count(),etc for list type objects
-  ==> to get the index of bulzer in list2 ==> list2.index("Bulzer") 
-      lly we can use count method to find no. of times Bulzer is present in the list (list2.count("Bulzer")
-      lly we can add append elements to list using append() ==> list2.append("abc")
-   **Note:Append() can take only one argument at a time
-  ==>lly for string say we have Sister="liz"
-     ==> sister.capitalize() ==> changes first letter to a capital one ==> o/p = Liz
+    Eg: a = 1.0 b = "1" c = [1] ==> all a,b,c are Objects(variables as well,every thing in python is an object) of type float, str and list respectively
+    hence we have fns like capitalize(),replace(),etc for string type objects 
+    and fns like bit_length(),conjugate(),etc for float type objects 
+    and fns like index(),count(),etc for list type objects
+    ==> to get the index of bulzer in list2 ==> list2.index("Bulzer") 
+        lly we can use count method to find no. of times Bulzer is present in the list (list2.count("Bulzer")
+        lly we can add append elements to list using append() ==> list2.append("abc")
+        lly use reverse() to reverse the list
+    **Note:Append() can take only one argument at a time
+    ==>lly for string say we have Sister="liz"
+    ==> sister.capitalize() ==> changes first letter to a capital one ==> o/p = Liz
         to change all the elements into upper case ==> use sister.upper()
-         sister.replace("z","sa") ==> changes z to sa ==> o/p = lisa
+        sister.replace("z","sa") ==> changes z to sa ==> o/p = lisa
 Therefore everything in python is an object an deach object have its own methods depending on the type of object
 We can also have same method name for diff type of object(Eg: we have index() for both string and List, for string we get the index of the characters in the string and in list we get the index of the elements in the list
 
+8)Packages(also called as modules):
+Numphy       --> to deal with arrays efficiently
+Matplotlib   --> for data visualization
+Scikit-learn --> for machine learning
+To install a package we need to use PIP(a package maintenance system for python)
+==> go to URL : http://pip.getthedocs.org/en/stable/installing/ and download get-pip.py file
+    then go to terminal and execute python3 get-pip.py ==> now we can use pip to install other packages
+    Eg: to install Numpy ==> type pip3 install numpy (pip3 and python3 tells we are using puthon 3)
+    ==> noe use import command in code to use the package
+    Eg : import Numpy(usage numpy.array([1,2,3]) (or) import Numpy as np ( to use np instead of Numphy)
+  **to use only one specific fn from a package ==> from package_name import fn_name
+    Eg: if we want to use only arrays from Numphy ==> from Numpy import arrays ==> we can use use only arrays from Numpy,
+        **here we can directly call the array function like this array([1,2,3])
+    Eg: Moon travels 12 degrees ==> distance travelled by moon = (radius * math.radians(12)) (converting radians into degrees usinge radians fnin math package)
+  **Eg: Suppose you want to use the function inv(), which is in the linalg subpackage of the scipy package. You want to be able to use this function as follows:
+        my_inv([[1,2], [3,4]]),which import statement we use ?
+        Ans = from scipy.linalg import inv as my_inv
 
         
