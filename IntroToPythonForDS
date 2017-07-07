@@ -39,25 +39,61 @@ One more data type is lists(List is a compount data type(i.e it can have diff. t
                         lly ==> list2[0:2]=['bulzers',24] ==> 2 elements gets  changed 
         ==> to add ==> list3 = list2[]+ ["sid",1,1,] ==> lly we can add 2 lists using + sign
         ==> to delete ==>use del() function Eg: del(list2[3])
-     ***==>1.	Understanding how Python lists actually work behind the scenes becomes pretty important now. What actually happens when you create a new list, `x` [‘a’,’b’,’c’], like this?
-3.	Well, in a simplified sense, you're storing a list in your computer memory, and store
-4.	the 'address' of that list, so where the list is in your computer memory, in `x`. This means
-5.	that `x` does not actually contain all the list elements, it rather contains a reference
-6.	to the list. For basic operations, the difference is not that important, but it becomes more
-7.	so when you start copying lists. Let me clarify this with an example.
-8.	Let's store the list `x` as a new variable `y`, by simply using the equals sign:  y = x
-9.	Let's now change the element with index one in the list `y`, as follows:  y[1] =”z” and print y ==>o/p = [‘a’,’z’,’c’],
-	The funky thing is that if you now check out `x` again, also here the second element is changed  print X also gives o/p = [‘a’,’z’,’c’],
-That's because when you copied x to y with the equals sign, you copied the reference
-to the list, not the actual values themselves. When you're updating an element the list,
-though, it's one and the same list in the computer memory your changing. Both `x` and
-`y` point to this list, so the update is visible from both.
-If you want to create a list `y` that points to a new list in the memory with the same
-variables, you'll need to use something else than the equals sign. You can use the `list()`
-function, like this, or use slicing to select all list elements explicitly.
-If you now make a change to the list `y` points to, `x` is not affected:
-If this was a bit too much to take in, don't worry. The exercises will help you understand
+     ***==>Understanding how Python lists actually work behind the scenes becomes pretty important now. What actually happens when you create a new list, `x` [‘a’,’b’,’c’], like this?
+           Well, in a simplified sense, you're storing a list in your computer memory, and 
+           store the 'address' of that list, so where the list is in your computer memory, in `x`. This means
+           that `x` does not actually contain all the list elements, it rather contains a reference
+           to the list. For basic operations, the difference is not that important, but it becomes more
+           so when you start copying lists. Let me clarify this with an example.
+           Let's store the list `x` as a new variable `y`, by simply using the equals sign:  y = x
+           Let's now change the element with index one in the list `y`, as follows:  y[1] =”z” and print y ==>o/p = [‘a’,’z’,’c’],
+           The funky thing is that if you now check out `x` again, also here the second element is changed,hence printing X also gives o/p = [‘a’,’z’,’c’],
+           That's because when you copied x to y with the equals sign, you copied the reference
+           to the list, not the actual values themselves. When you're updating an element the list,
+           though, it's one and the same list in the computer memory your changing. Both `x` and
+           `y` point to this list, so the update is visible from both.
+           If you want to create a list `y` that points to a new list in the memory with the same
+           variables, you'll need to use something else than the equals sign. You can use the `list()`
+           function, like this, or use slicing to select all list elements explicitly.
+           If you now make a change to the list `y` points to, `x` is not affected:
+           ==> we have to copy elements only(not their references)like this 
+                  y = list(x) or y = [x:] ==> now if we change the elements of Y they wont be reflecting in X,hen
+6)Functions:
+* use help(fn name) or ?fn_name to know abt the fn i.e help fn shows the documentation of a function in python.
+  a)type() ==> give datatype of a variable
+  b)round(number[,ndigits) ==> round a value 2 type of i/p a)one input(here default 2nd input(i.e ndigits is optional) is taken) b) 2 inputs  
+    ** ndigits is present in b/e [,----] ==> this is to represent optional argument to a fn
+    a)round(1.68) ==> round to nearest integer ==> o/p =2
+    b)round(1.68,1) ==> rounds to one decimal(i.e precision is one) ==> o/p = 1.7
+    c)round(111.487,1) ==> o/p = 111.5
+    d)round(111.487,0) ==> o/p = 111.0
+    e)round(111.487,-0) ==> o/p = 111.0  
+    f)round(111.487,-1) ==> o/p = 110.0
+    g)round(111.487,-2) ==> o/p = 100.0
+  c)min(x) ==> gives the minimun value in the list X
+  d)max(x) ==> gives the maximum value in the list X
+  e)len() ==> gives lengths of Lists and Strings Eg:len(list1) ==> o/p = 10
+  f)int(),float(),str(),bool() ==> converts to int or float or string or boolean
+  g)sorted() ==> sorts elements in ascending or descending order
+    sorted(list1) ==> sorts in ascending opder
+    sorted(list1,reverse=True) ==> sorts in descending order
 
+7)Methods:
+Functions that belong to objects are called methods 
+  Eg: a = 1.0 b = "1" c = [1] ==> all a,b,c are Objects(variables as well,every thing in python is an object) of type float, str and list respectively
+  hence we have fns like capitalize(),replace(),etc for string type objects 
+  and fns like bit_length(),conjugate(),etc for float type objects 
+  and fns like index(),count(),etc for list type objects
+  ==> to get the index of bulzer in list2 ==> list2.index("Bulzer") 
+      lly we can use count method to find no. of times Bulzer is present in the list (list2.count("Bulzer")
+      lly we can add append elements to list using append() ==> list2.append("abc")
+   **Note:Append() can take only one argument at a time
+  ==>lly for string say we have Sister="liz"
+     ==> sister.capitalize() ==> changes first letter to a capital one ==> o/p = Liz
+        to change all the elements into upper case ==> use sister.upper()
+         sister.replace("z","sa") ==> changes z to sa ==> o/p = lisa
+Therefore everything in python is an object an deach object have its own methods depending on the type of object
+We can also have same method name for diff type of object(Eg: we have index() for both string and List, for string we get the index of the characters in the string and in list we get the index of the elements in the list
 
 
         
