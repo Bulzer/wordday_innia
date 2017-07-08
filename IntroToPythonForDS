@@ -113,5 +113,26 @@ To install a package we need to use PIP(a package maintenance system for python)
   **Eg: Suppose you want to use the function inv(), which is in the linalg subpackage of the scipy package. You want to be able to use this function as follows:
         my_inv([[1,2], [3,4]]),which import statement we use ?
         Ans = from scipy.linalg import inv as my_inv
-
-        
+9)Numpy(numeric Python--use mostly to do vector arithmetic)
+    **Note: numpy arrays can contain values of only one type
+      eg: if we declare an numpy arrar as np.array([1.0,"us",True])
+    **==> every element gets converted to a string i.e it becomes as ["10","is","True"].This behaviour is called type coercion.
+      Therefore numphy array is kind of a new datatype in python llr to int,float,str,bool,list etc and numpr array has its own methods
+    **Eg: if we have 2 lists say l1=[1,2,3] and l2=[1,2,3] and if we do l3 = l1 + l2 ==> o/p = [1,2,3,1,2,3]
+          but if these 2 lists were numpy arrays and we do l3 = l1 + l2 ==> o/p = [2,4,6] i.e it does addition
+    Questions:
+    1)why do we use numphy array when we already have normal python lists ?
+    Sol:Numphy arrays are alternatives to noral python lists as they are fast and we can perform many operatios on them over the entire ayyay elements at ones.
+    Eg: we have 2 lists containing weights and heights of the persons and we need to calculate BMI
+     ==> say listW = [1,2,3,4,5]
+             listH= [1,2,3,4,5]
+             ==> BMI = listw/listH**2 ==> we get compilation error reasons a) cant have squares of all the elements in a list
+                                                                       b) cant divide list by a list
+        Now , we convert these list to numpy arrays
+         ==> np_height= np.array(listH)
+         np_weight=np.array(listW)
+         BMI = npp_weight/np_height**2 ==> works fine ==> o/p = [ 1 , .5, .33 , .25, .2]
+     **we can also do other operations on np array like
+      a) BMI > .25 ==> gives an array containing of boolean values if BMI is greater that 25 ==< true else false i.e [True,True,True,True,False]
+      b) BMI[BMI < .25](use squaRE BRACES here) ==> gives the value(s) of the bmi which are less than .25 ==> o/p = [.2] (o/p is also an array)
+         say temp = BMI < .25 ==>print (BMI[temp])  gives the same result as above.
