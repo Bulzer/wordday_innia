@@ -117,6 +117,7 @@ To install a package we need to use PIP(a package maintenance system for python)
     **Note: numpy arrays can contain values of only one type
       eg: if we declare an numpy arrar as np.array([1.0,"us",True])
     **==> every element gets converted to a string i.e it becomes as ["10","is","True"].This behaviour is called type coercion.
+    dtype = '<U32' represents it of string type
       Therefore numphy array is kind of a new datatype in python llr to int,float,str,bool,list etc and numpr array has its own methods
     **Eg: if we have 2 lists say l1=[1,2,3] and l2=[1,2,3] and if we do l3 = l1 + l2 ==> o/p = [1,2,3,1,2,3]
           but if these 2 lists were numpy arrays and we do l3 = l1 + l2 ==> o/p = [2,4,6] i.e it does addition
@@ -132,7 +133,27 @@ To install a package we need to use PIP(a package maintenance system for python)
          ==> np_height= np.array(listH)
          np_weight=np.array(listW)
          BMI = npp_weight/np_height**2 ==> works fine ==> o/p = [ 1 , .5, .33 , .25, .2]
+        * type(listH) ==> o/p = numpy,ndarray ==> means it is a Numpy array and it is an N dimentional array(ndarray)
      **we can also do other operations on np array like
       a) BMI > .25 ==> gives an array containing of boolean values if BMI is greater that 25 ==< true else false i.e [True,True,True,True,False]
       b) BMI[BMI < .25](use squaRE BRACES here) ==> gives the value(s) of the bmi which are less than .25 ==> o/p = [.2] (o/p is also an array)
          say temp = BMI < .25 ==>print (BMI[temp])  gives the same result as above.
+     2D-Numpy Array(we can create till 7 D arrays):
+      1) we can create a 2 D numpy array like this 2d_array=np.array([[1,2,3,4],[5,6,7,8]])
+      2)2d_array.shape ==> o/p = (2,4) i.e 2 rows and 4 columns 
+      ** Shape is called the attribute of the array
+      3)2d_array[0] ==> gives the first full row as o/p (we can also use 2d_array[0,:]
+        2d_array[0][1] ==> gives the 2nd element of the first row and process is called subsetting
+        2d_array[0,1]  ==> also gives the 2nd element of the first row and process is called subsetting
+        subsetting : process to get the sub elements in an List or an array
+        2d_array[:,1:3] ==> gives the 1st nd 2nd column values of both the rows
+       **we can directly convert a list containing set of lists into a 2D array (eg: np.array(list_name))
+       we have other methods which we can use in Numpy
+       Eg : 1)np.mean(2d_array[0]) --> gives mean of the 1st row of array (average of elements)
+            2)np.median(2d_array[0]) --> gives median of the 1st row of array(if all the elements are arranged in ascendenging/descending order the middle one is the median)
+            3)np.corrcoef(2d_array[0],2d_array[0]) --> this fn tells if row 1(say height) and row 2(say weight) are co-related
+            4)np.std(2d_array[0]) --> gives the standard deviation of the list of elements
+       4)Numpy also has basic fn like sun(),sort() etc which are also present in normal python,but these are faster in numpy.
+       5)we can use np.column_stack((array1,array2) to combine 2 arrays and use them as together as 2 columns.
+       
+      
