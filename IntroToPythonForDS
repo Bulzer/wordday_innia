@@ -155,5 +155,21 @@ To install a package we need to use PIP(a package maintenance system for python)
             4)np.std(2d_array[0]) --> gives the standard deviation of the list of elements
        4)Numpy also has basic fn like sun(),sort() etc which are also present in normal python,but these are faster in numpy.
        5)we can use np.column_stack((array1,array2) to combine 2 arrays and use them as together as 2 columns.
+       6) Eg: to get the values based on the values from other a value in other array
+          height = [1,2,3,4,5,6,7,8]
+          positions = ['GK','c','VC','VC','M','M','M','M','M']
+          np_heights= np.array(height)
+          np_positions=np.array(positions)
+          # To get the height of goal keeper(s) i.e Extract all the heights of the goalkeepers. You can use a little trick here: use np_positions == 'GK' as an index for np_heights
+          gk_height = np_heights[np_positions=='GK']
+          # Heights of the other players: other_heights 
+          other_heights=np_heights[np_positions!='GK'] (here we will get  'index out of bound error' as size of heights array and positions array is not same))
+          # Print out the median height of goalkeepers.
+          print("Median height of goalkeepers: " + str(np.median(gk_heights)))
+  more on Numphy -->  http://www.numpy.org/
+
+10)MatPlotLib:
+--> father of all Visualizations in python is matplot lib,Visualization is useful for data exploration and to provide insights.
+-->pyplot is a sub package inside MatPlotLib package(==> import it like this import matplotlib.pyplot as plt)
        
       
