@@ -171,5 +171,63 @@ To install a package we need to use PIP(a package maintenance system for python)
 10)MatPlotLib:
 --> father of all Visualizations in python is matplot lib,Visualization is useful for data exploration and to provide insights.
 -->pyplot is a sub package inside MatPlotLib package(==> import it like this import matplotlib.pyplot as plt)
+
+
+
+--------------------------
+import numpy as np
+import matplotlib.pyplot as plt
+print (100*1.1**7)
+print(100*1.1*7)
+height = 4.10
+heignt_in_cm = height * 12 *2.54
+height_in_meters = heignt_in_cm/100
+print (heignt_in_cm)
+weight_in_kg = 55
+BMI = weight_in_kg/height_in_meters**2
+print(BMI)
+print(type(BMI))
+name = 'naveed'
+print(name.capitalize())
+print(name.upper())
+male = True
+clas = 1
+
+print ("my BMI is : " + str(BMI))
+print("I can add integers, like " + str(5) + " to strings.")
+print("I said " + ("Hey " * 2) + "Hey!")
+print(True + False)
+list1=['n','a','v','e','e','d',1,2,3,]
+print(list1)
+print(list1[0])
+print(list1[1])
+print(list1[8])
+print(list1[-1])
+list2 = ["Bulzer",24,"human",1,2,3,4,5,6]
+print(list2[4:])
+round(1.68)
+list3 = [13,456,561,5656,131,2,12,13]
+print(sorted(list3))
+height = [1,2,3,4,5,6,7,8]
+positions = ['GK','c','VC','VC','M','M','M','M','M']
+np_heights= np.array(height)
+np_positions=np.array(positions)
+#print(np_heights)
+#print(np_positions)
+#to get the height of goal keeper
+gk_height = np_heights[np_positions=='GK']
+#print(gk_height)
+years = [1950,1970,1990,2010]
+population_inbillions =[2.5,3.6,5.2,6.9]
+plot1= plt.plot (years,population_inbillions)
+#plot() keeps the plot ready,show() fn is the one which actually builts the plot
+#plot1.show()
+plot1a=plt.show()
+print(plot1a)
+plot2=plt.scatter(years,population_inbillions)
+#scatter plot is used to see all the  data points individually
+plt.show()
+plt.show()
+----------------------------------
        
       
