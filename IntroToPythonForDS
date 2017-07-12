@@ -168,7 +168,7 @@ To install a package we need to use PIP(a package maintenance system for python)
           print("Median height of goalkeepers: " + str(np.median(gk_heights)))
   more on Numphy -->  http://www.numpy.org/
 
-10)MatPlotLib:
+10)MatPlotLib:(link : http://matplotlib.org/1.5.1/gallery.html)
 --> father of all Visualizations in python is matplot lib,Visualization is useful for data exploration and to provide insights.
 -->pyplot is a sub package inside MatPlotLib package(==> import it like this import matplotlib.pyplot as plt)
 ==> plt.plot(x_axis_array,y_axis_array) --> here the data to create the plot is kept ready (plot() creates line plot,we can use  scatter() instead of plot to have points in the plot)
@@ -178,13 +178,29 @@ To install a package we need to use PIP(a package maintenance system for python)
 -->use plt.title('world population analysis') to give title(pass the name as argument to the fn as a string,here we passed 'world population analysis'
 -->ply.xticks([0,2,4,6,8]) --> to high light the ticks on x-axis(use yticks for y-axis) whatever value we give in the list as argument are only seen
 --> if we want to give name to out ticks ==>ply.xticks([0,2,4,6,8],[0cm,2cm,4cm,6cm,8cm])
+**--> to fill the area of the plot ==> replace plot() fn with fill_between() fn and pass x-axis list,y-axis list,point where to start and color
+     eg: plt.fill_between(x_axis_array,y_axis_array,0,color='green')
+*-->Typically, you place all customization commands between the plot() call and the show() call.
+ --> Alpha can be set from zero to one, where zero totally transparant, and one is not transparant. eg: plt.scatter(x = gdp_cap, y = life_exp, s = np.array(pop) * 2, c = col,alpha=0.8) where x,y = list of values on x-axis and y axis,s= array(pop is a list converted to numpy array and its values are doubled by multplying with 2 ) containing the size of the bubble(dot) alpha = opacity of bubbles/dots
+    *here we used C = col (to give serarate colour to each values(based on the country) 
+    i.e The next step is making the plot more colorful! To do this, a list col has been created for you. 
+    It's a list with a color for each corresponding country, depending on the continent the country is part of.
+    How did we make the list col you ask? The Gapminder data contains a list continent with the continent each country belongs to. 
+    A dictionary is constructed that maps continents onto colors: dict = { 'Asia':'red','Europe':'green','Africa':'blue','Americas':'yellow','Oceania':'black' }
+ --> add plt.grid(True) before plt.show() to show grid lines on the graph 
+ --> we can also give names to bubbles like this(has to be given before show() and grid() fns) plt.text(1550, 71, 'India')
+       (we have to get the x and y cordinates of that bubble to give it a name)                                                                                       plt.text(5700, 80, 'China')
+  
   Histograms:
     These are a type of visualizations which we used to explore the datasets,these will help us to get an idea about the distribution of variables. 
    --> plt.hist(list of attributes) hist() fn can have many i/p attributes out of which 2 are most imp x(list of values) and bins(in how many chunks the line is to be divided) eg:plt.hist(list_name,bins=10)
    -->default no. of bins set by python is 10
    -->plt.hist() fn just keeps the histogram ready plt.show() actually builts the histogram
- **--> to fill the area of the plot ==> replace plot() fn with fill_between() fn and pass x-axis list,y-axis list,point where to start and color
-      eg: plt.fill_between(x_axis_array,y_axis_array,0,color
+
+**Matplotlib is not the only package to data visualization in Python ,there is one more package called ggplot.
+  ggplot is a plotting system for Python based on R's ggplot2 and the Grammar of Graphics.(from ggplot import *)
+  link : http://ggplot.yhathq.com/
+  
    
 **Question:
   1)You are working with a Python list with 10 different values. You divide the values into 5 equally-sized bins.How wide will these bins be if the lowest value in your list is 0 and the highest is 20?
@@ -197,6 +213,19 @@ To install a package we need to use PIP(a package maintenance system for python)
   Ans : Histogram
   4)You're a professor in Data Analytics with Python, and you want to visually assess if longer answers on exam questions lead to higher grades. Which plot do you use?
   Ans : scatter plot
+  
+  
+11)Boolean and Control structures:
+x = 7
+if x > 6 :
+    print("high")
+elif x > 3 :
+    print("ok")
+else :
+    print("low")
+ 
+ ==> o/p = higs i.e if it finds tha condition to be true it ne
+
 --------------------------
 import numpy as np
 import matplotlib.pyplot as plt
