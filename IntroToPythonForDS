@@ -216,16 +216,23 @@ To install a package we need to use PIP(a package maintenance system for python)
   
   
 11)Boolean and Control structures:
-x = 7
-if x > 6 :
-    print("high")
-elif x > 3 :
-    print("ok")
-else :
-    print("low")
+ a) x = 7
+    if x > 6 :
+        print("high")
+    elif x > 3 :
+        print("ok")
+   else :
+      print("low")
  
- ==> o/p = higs i.e if it finds tha condition to be true it ne
+   ==> o/p = high i.e if it finds the condition to be true it executes the statements which are at an indentation of 4 spaces and never goes down the loop,just comes out of loop 
+**b) x = 8
+     y = 9
+     Print(not(not(x < 3) and not(y > 14 or y > 10)))
+     o/p = fALSE
+   **NOTE: 'NOT' has higher importance than 'AND' or 'OR',hence it will  be executed first.
 
+12)Pandas:
+  -->
 --------------------------
 import numpy as np
 import matplotlib.pyplot as plt
