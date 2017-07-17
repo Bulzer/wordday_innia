@@ -231,8 +231,37 @@ To install a package we need to use PIP(a package maintenance system for python)
      o/p = fALSE
    **NOTE: 'NOT' has higher importance than 'AND' or 'OR',hence it will  be executed first.
 
-12)Pandas:
-  -->
+12)Pandas:(import pandas as pd)
+  -->high level data manipulation tool,in pandas we store data in a data frame.
+  --> a Dataframe is bascically a table.The rows represent diff entries or observations(each row has unique Row Label) and 
+      the columns represent different properties, and are identified by their column labels.
+  -->You typically don't build a pandas data frame manually. Instead, you import data from an external file that contains all this data. 
+     The brics data that I showed you before comes from this CSV file.
+  -->brics=pd.read_csv("folder1/files/brics.csv") ==> to read a csv file
+      Note:If you now print brics, there's still something wrong. The row labels, also called row indexes, are seen as a column in their own right. To solve this, we'll have to tell the `read_csv()` function that the first column contain the row indexes.
+      ==> use brics=pd.read_csv("folder1/files/brics.csv",index_col=0)
+  -->brics["column name"] ==> give the values in that column(we can also use dot notation i.e brics.country where country is the name of teh column or a column label)
+  -->bricks["column name"] = ['True','True','True'] ==> adds a column to the dataframe with the values given in the list.
+  -->bricks["density"]=brics.population/brics.area * 1000000 ==> creating a column based on other columns
+ *-->lly to access the rows ==> use loc i.e brics.loc["row index/label"] ==> resule is displayed in the form of a column in th o/p.
+  --> to get a single element in a DF(data frame) ==> brics.loc["row index","column index"] (we can also use brics["column index"].loc["row index"])(we can also use brics.loc["row index"]["column index"]
+  --> read_csv() documentation --> http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
+  -->The single bracket version gives a Pandas Series, the double bracket version gives a Pandas DataFrame.(i.e bricks["country"] gives a pandas series while bricks[["country"]] gives a pandas dataframe.
+  --># Print out observations for China and India in the form of a data frame ==> print(brics.loc[['CH','IN']])
+  --># Print out observations for China and India in the form of a data frame only 2 columns ==>print(brics.loc[['CH','IN']][['country','population']])
+Questions:
+1)How is a Pandas DataFrame different from a 2D Numpy array?
+sol:In Pandas, different columns can contain different types.
+2)What are two characteristics that describe Pandas DataFrame?
+sol:Rows correspond to observations; columns correspond to variables, or properties, of these observations.
+3)Which technique should you use to select an entire row by its row label when accessing data in a Pandas DataFrame?
+sol:loc
+description:Square brackets are used to get specific columns from a Pandas DataFrame. iloc is used if you want to select a row based on its position in the DataFrame, and not based on its row label.
+
+
+https://www.datacamp.com/home#tab_in-progress (other courses in datacamp for free)
+http://pandas.pydata.org/(pandas website for data science)
+
 --------------------------
 import numpy as np
 import matplotlib.pyplot as plt
