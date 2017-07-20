@@ -1,0 +1,89 @@
+ML:
+A)Supervised:(mana delta training)
+Input data-->Data inference-->prediction ==> outcome
+types of i/p data: 2 types
+1.Continuous data(Infinite Set)-- Quantitative or Numeric in nature==> models used are Regression Models
+2.Categorical data(Finite set eg:men,women and children==> only 3 categories can exit here)-- Categorize or Calssify==>models used are Classification models
+
+B)Unsupervised:Bascically called as clustering(bascically we dont know the o/p eg:PMA clustering uses K-means clustering)
+C)Semi-Supervised:combination of both supervised and unsupervised
+D)Reinforcement:trial and Error kind(used in Robotics)
+
+
+Mana IIP Process:
+Define goal/Predict Something
+Collect data(huge set),does intelligent sampling(Eg: out of 1000 records only 100 will be chosen(since mana cant handle very huge data)
+Build Model(70 records--> Training Set, 30 records --> Test set(to test if the model built is working fine as we already know the o/p)(mana recommends few algorithms)
+Validate the Model(here we actually use the test set to validate)
+Deploy the model(Big data store holds the result)
+(Eg: Target:No. of registration on a given day ==> predictors = Holiday,weekend,weekday(called as feature selection in IIP ML)
+
+Process:
+1.create a data source to injest training data(in IIP)
+2.IIp ML-->
+-->new project by selecting the workspace which have our training DS
+-->selection of target and predictors
+-->select algorithms
+-->build model
+-->deploy model(Ingestion)
+
+http://10.138.12.29:8080/IIP/UI/#/administration/list
+create a new workspace(under adminestration tab)==>give name ,desc and save
+-->once saved==> go to data store config==> give store into : HIVE,select Hive DB: default,Specify location:/mnauser17/IIPML,Output type:Text tables,delimited:",",Escaped by:"\"(back slash)==> save==> work space created
+Now create new Data source to injest
+==>chose Data source type as:DesktopUploadAdapter_Transformer(as we are uploading from Desktop),upload bikesharetrain.csv and give hive tasble name:manauser17_bikeshareTrainData
+==> specify schema:file type:CSV,upload schema.txt,delimiter and execute the job in full load
+==> check in azkaban for thejobs that are running
+Once the job runs successully , we can check our data in Data Explorer in Data science tab.
+
+
+==> go to IIP ML link:
+http://10.138.12.29:8080/MLWeb/UI/#/create/project/target/classification/defaultmanauser17_bikeshareTrainData/16/16
+==> create a new project in our work space and select oput dataSET and refresh(==> Spark job will be submitted check in http://10.138.12.28:9094/cluster/apps/FINISHED )
+here we are using Regression model
+==> now select the cnt column as target ==> a spark job runs to get the features(i.e it predicts the predictors)
+==> next==> algorithms are shown(total 8 algorithms as of now are there in Mana )
+==> here we ca select any no. of algorithms(I selected 4 algorithms,separate spark job will run for each algorithm)
+==> first we will get the R-square value and RMSE value for training data
+==>validate the algorithms  and deploy the Algorithm we like to use
+Now go to IIP and insert the Produvtion data(data on which predictiion is to be done) and then go to ML url and deploy the ML moden on this dataSET(o/p will be stored in HDFS)
+To view the predicted output:
+==>create a dummy data set(type as Parquet and store as HDFS) and just save it ==> Link this dummy dataset with HDFS files option in Data Management tab
+==> give the HDFS path(we will get this path from the ML url where we deployed our model on prod data) and save 
+==> now we can view the o/p resule if we go to data explorer tab and select our table
+
+------------------------------------------------------------------------------
+
+R-Square:
+RMSE:
+EG for Regression:
+cnt~TEMP
+CNT 30 40 50 20 
+temp 10 20 15 30 
+==> 0th model Avg:35
+Linear regression==>b0+b1temp
+SST=sum[(mean-actual cnt)^2]
+SSE=sum[(predictor cnt - actual cnt)^2]
+R^2= 1 - (SSE/SST)
+consider SST-->100
+		 SSE-->20 ==> R^2 = .8
+==> if R^2 is higher ==> better model
+Adjacent R^2 = no. of predictors and no. of records
+R^2=(1-(SSE/N-k-1))/(SST/N-1)
+RMSE=sq.root...........
+Lower the RMSE ==> better the model
+
+for classification we will have Accuracy and Kappa scores
+Eg:
+say no. of records = 100 and no. of categories=4
+and we have divided them 4 categories equally i.e 25 each
+say it predicted ==> for the records of Category 1==>prediction=22 records belongs to 1,1 beong to 2nd category,2 1 belong to 3rd category,0 belong to 4th category
+lly 2 23 0 0
+    0 0 24 1 
+	0 1 2  22
+==> accuracy =((22+23+24+22)/100)
+In classification both kappa and accuracy must be high for better models
+
+
+
+
