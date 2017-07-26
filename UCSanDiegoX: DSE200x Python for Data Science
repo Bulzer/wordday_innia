@@ -20,3 +20,42 @@ The next three courses are Statistics, Machine Learning, and Spark (data analysi
     STAT5006 Statistical Data Analysis 1 (12.5 credits)
     ISYS5007 Data Management (25 credits)
     Elective (25 credits)
+-----------------------------------------------------------------------------
+1)why data scients like python for DS:
+   the Jupyter Notebooks make Python-based analysis more producible and repeatable
+   NumPy and Pandas to ingest and analyze data efficiently.
+   We will add the visualization libraries including Matplotlib,
+   scikit_learn to apply ML 
+   beautifulsoup to read XML and HTML type data
+2)There are five key steps in the overall process of data science,namely, (these 5 steps ar kind of an iterative process)
+     a) data acquisition, (importing raw dataset into our analytics platform) 
+      b)data preparation, (explore and visualize , perform data cleaning)
+      c)data analysis, (use statistical analysis and ML i.e feature selection,model selection and finding the result)
+      d)presentation, and (present your findings)
+      e)reporting of insights and turning these insights into data-driven actions.(purpose i.e stake holders will take actions and use these findings)
+**Though we have five steps, first step is always the purpose/reason of collecting the data i.e to solve which problem we are doing this
+a)Data Acquisition:
+   -->we may need to ingest/take data from DBs(relational and non-relational(NoSqls)),
+      text files(csv files,test files),live feeds(sensors,online platforms(twitter,live feed of weather observations)
+      
+b)Data preparation/exploration:
+    -->Correlation graphs: can be used to explore the dependencies between different variables in the data.
+    -->General trends: show you a simple graph of how the data is progressing over time.
+    -->Outliers show you the data points that are distant from other data points.Plotting outliers will help you double-check for errors in the data due to measurement.
+       In some cases, outliers that are not errors might make you find a rare event.
+    -->summary statistics(like mean,median,mode,range,standard deviation etc) :provide the numerical values to describe your data.Summary statistics are quantities that capture various characteristics of a set of values.
+       Mean and median are measures of the location of specific values.
+       Mode is the value that occurs most frequently in your data set.
+       range and standard deviation are measures of spread in your data.
+   Looking at these measures will give you an idea of the nature of your data.They can tell you if there's something wrong with your data.
+   For example, if the range of the values for age in your data includes negative numbers or a number much greater than hundred, there's something suspicious in the data
+   -->Visualization techniques: also provide quick and effective,overall, a very useful way to look at data in this preliminary analysis step.   
+      A heat map, for instance, an quickly give you an idea where the hot spots are.
+      Many different types of graphs can be used.
+         Histograms show the distribution of the data and can show skewness or unusual dispersion.
+         Boxplots are another type of plot for showing data distribution.
+         Line graphs are useful for seeing how values in your data change over time.Spikes in the data are also easy to spot.
+         Scatter plots can show correlation between two variables.
+Questions:
+1)what is websocket service?
+Sol: similar to REST but it transfers the data in real time (i.e as soon as an event occurs it transfers data)
