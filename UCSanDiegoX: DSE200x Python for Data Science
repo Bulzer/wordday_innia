@@ -56,6 +56,15 @@ b)Data preparation/exploration:
          Boxplots are another type of plot for showing data distribution.
          Line graphs are useful for seeing how values in your data change over time.Spikes in the data are also easy to spot.
          Scatter plots can show correlation between two variables.
+    -->get clean/quality data
+         a)remove data with missing values
+         b)merge duplicate records(This would record a way to determine how to resolve conflicting values.Perhaps it makes sense to retain the nearer value whenever there's a conflict.)
+         c)generate best estimate for an invalid value(eg : we can assume age of an employee when there is no/invalid age given based on the time he joined the company and his role etc)
+         d)remove outliers
+    ---> get data into shape(also called as data manipulation or data pre-processing or data wrangling or data munging.)
+         a)This is the 2nd part of data preparation
+         b)Some operations for this data munging,wrangling, pre-processing includes scaling, transformation,feature selection, dimensionality reduction and data manipulation.
+         c)Scaling involves changing range of values to be between a specified range such as from zero to one.This is done to avoid having certain features with large values from dominating the results.
 Questions:
 1)what is websocket service?
-Sol: similar to REST but it transfers the data in real time (i.e as soon as an event occurs it transfers data)
+Sol: similar to REST but it transfers the data in real time (i.e as soon as an event occurs it transfers data.. eg : transfering data from weather towers)
