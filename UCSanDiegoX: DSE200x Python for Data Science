@@ -88,7 +88,14 @@ c)Data Analysis:
          c)Do the analysis results suggest a more detailed look at some aspect of the problem?For example, predicting sunny weather gives very good results but rainy weather predictions are just so so.This means you should take a closer look at your examples for rainy weather.Perhaps there are some anomalies in those samples or perhaps there are some missing data that needs to be included in order to completely capture rainy weather.
        The ideal situation would be that your model performs very well with respect to success criteria that were determined when you defined a problem at the beginning of the project.
 
-d)Reporting Insotes/Presenting:
+d)Reporting Insites/Presenting:
+   Techs generally used for visualizations:
+                  1)R,
+                  2)Python,
+                  3)D3 is a JavaScript library for producing interactive web-based visualizations and data-driven comments,
+                  4)Leaflet is a lightweight, mobile-friendly JavaScript library to create interactive maps.
+                  5)Lastly, Tableau and Google Charts allow you to create visualizations in your profiles so you can share them or put them on a site or a blog, and they provide cross-platform compatibility to mobile devices.
+                  6)Timeline is a JavaScript library that allows you to create timelines over these results.
 
 
 Questions:
