@@ -97,7 +97,75 @@ d)Reporting Insites/Presenting:
                   5)Lastly, Tableau and Google Charts allow you to create visualizations in your profiles so you can share them or put them on a site or a blog, and they provide cross-platform compatibility to mobile devices.
                   6)Timeline is a JavaScript library that allows you to create timelines over these results.
 
+-------------------------------------------------------------------------------------------
+Python :
+--------------
+Basics:
+-------
+Python uses indentation of code rather than brackets.
+Python uses dynamic typing.(i.e we dont need to specify the data type of a variable while declaring Eg: we can directly give X= 1 while in java/C we have to give it as int X= 1; ==> python uses dynamically typed)
+Python doesn't use semicolons at the end of statements.
+Everything in Python is an object.
+Q)what do we mean by objects?
+In programming, an object is something that can hold data and often has methods associated with it.We'll actually be working with more complex objects like lists later this week.
+==> when you say x = 3,Python will create a PyIntObject with a value of three and then have your variable x point to that object(i.e PyIntObject{ value = 3 } ) 
+   *x is created on the stack,and the PyIntObject with the value of three will be created on the heap.
+   **The stack holds your local variables and is managed by your program,whereas the heap holds dynamically created data and is actually managed by the operating system.
+   Now again if we are giving X=4.5 ==>a PyFloatObject with the value of 4.5 will be created.Then, x will be set to point directly to that new PyFloatObject.For those of you familiar with C or C++,no longer having anything point to an object should be a big red flag, because that's lost memory,but in Python, that's taken care of for you.The garbage collector in Python will automatically free the space associated with that first PyIntObject because nothing is pointed to it anymore.
+   
+   **we can also check if 2 variables are pointing to the same object by Using 'is' command (returns True if pointing to same object else false)
+      Eg:
+      A=3
+      B=3.0
+      A is Y ==> o/p False (since separate pyintobject and pyfloat are created)
+      if we use A==B ==> o/p = True (Since they have the same value,even though they are pointing to diff objects)
+   **Eg 2:
+      X="Hello" ==> creates a String object PyStringObject.strings in Python,similar to languages like Java, are immutable.Which means they can't be changed.Also, similar to other languages,there are built-in methods that you can call on strings.
+      Syntax to call a Method in Python:
+      variable_name.method_name(parms)
+      ==> X.lower() ==> gives hello
+      ==> now if we print X ==> we still get o/p as Hello (since strings objects are immutable)
+      ==> to change we have to give it like this X=X.lower() ==> now if we print X ==> o/p hello
+ ***Q)x = 7
+      y = x
+      x = 3
+      print(x,", ",y)
+      Options are    a)3,7 b) 7,7 c)7,3 d)3,3
+    Sol: A
+      
+      String Methods:
+      lower() ==> makes everything to lower case.
+      capitalize() ==> makes first letter of String in Upper case.
+      
+      
+Common types in Python:
+----------------------
+Numeric : integers,floats,complex
+Sequence: list,tuple,range
+Binary:byte,bytearray
+True/False:bool
+Text:String
+
+For loop:
+---------
+for i in range(0,10):  ==> syntax of range = range(start,stop[,step]) i.e returns values b/w start(inclusive) and stop(exclusive i.e less than symbol kin of) and step is the increament Eg: for i in range(0,10,2) ==> o/p = 0 2 4 6 8 (since step is given as 2,default step is 1)
+    print(i)
+==> o/p = 0 1 2 3 4 5 6 7 8 9
+while Loop:
+-----------
+Works same as For Loop but comes handy in scenarios when we don't know when the condition will finish or when the increment is more complex.
+Syntax : i = 2
+         while i < 12:
+             print (i)
+             i=i+2
 
 Questions:
 1)what is websocket service?
 Sol: similar to REST but it transfers the data in real time (i.e as soon as an event occurs it transfers data.. eg : transfering data from weather towers)
+
+Notes:
+**1)http://pythontutor.com/ (site to learn code,it shows us the visualizations of the working of the code)
+*2)x is created on the stack,and the PyIntObject with the value of three will be created on the heap.
+**3)The stack holds your local variables and is managed by your program,whereas the heap holds dynamically created data and is actually managed by the operating system.
+  4)Draw memory diagrams to Analyse the codes ==> it will be easier to understand
+
