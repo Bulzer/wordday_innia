@@ -159,6 +159,14 @@ Syntax : i = 2
              print (i)
              i=i+2
 
+Functions:
+----------
+**def is a key word to denote that you're defining a function here. (eg :- def ab_val(val):
+                                                                               if val < 0;
+                                                                                   return 0-val
+                                                                               return val)
+*Notice that neither the return type nor the type of the input parameter are defined.This has some advantages and disadvantages.The advantage is you don't need to write amy_abs function for ints, another for doubles,another for floats, and so on.The disadvantage is you would try to call my_abs and pass it, say a string, and that could cause problems.There may also be some issues with the expected return type.
+*If we dont return a value from a fn ==> by default it returns 'None'.
 Questions:
 1)what is websocket service?
 Sol: similar to REST but it transfers the data in real time (i.e as soon as an event occurs it transfers data.. eg : transfering data from weather towers)
@@ -168,4 +176,5 @@ Notes:
 *2)x is created on the stack,and the PyIntObject with the value of three will be created on the heap.
 **3)The stack holds your local variables and is managed by your program,whereas the heap holds dynamically created data and is actually managed by the operating system.
   4)Draw memory diagrams to Analyse the codes ==> it will be easier to understand
+  5)the colon, in loops after condition,says to execute the statements indented after this line,should that condition be true. 
 
