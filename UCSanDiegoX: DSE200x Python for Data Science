@@ -252,6 +252,24 @@ ZIP fn : mostly used when we are dealing with 2 lists
 
 Tuples:
 -------
+Usually, tuples are used to put together information connected in some way.Eg: Tuple1=('Honda','Civic',2017,4)
+Tuples are a way of grouping data.They are llr to lists but they're immutable.
+We can use tuples llr to list Eg: tuple1[1] give o/p as Honda,len(tuple1) gives length of tuple,we can iterate a tuple using for loop as 'for i in tuple1:'
+I'm trying to change the year of the car to be 2018(tuple1[3]=2018).If I try this,I get an error.
+Hence I want you to take away from this video,is that tuple immutability means that you can trust it to never change.
+Immutability is important two key ways.The first, is more general as in regards to parallel computing.Parallel computing is a key facet of data science.
+**In parallel computing, data which can change make parallel computation harder because you have to make sure everyone working on the problem sees those changes.But if data can't change,you can just send copies of it to compute nodes and no one has to worry about it changing on them while they're computing.
+**Tuples can be used as keys in the dictionaries.Because the tuple doesn't change,the dictionary can organize based on its initial value without worries about the key getting changed by somebody with a reference to it.
+
+Dictionaries:
+-------------
+Dictionaries are data structures which are just Python's term for a map in Java.Hence A dictionary holds a combination of key value pairs.
+The only restriction on data types in a dict is that the key has to be immutable(like String,tuple..etc).while value can be anything(int,string,list dict ..etc)
+Creating a Dict:
+   Eg:>>>dict = {('grudge',2014):9.1,('grudge',1995):8.7} ==> here we took keys as a combination of movie name and its year of release in the form of a tuple(as keys have to be immutable and unique, while the value is their respective IMDB rating)
+   colen is used to separate a key and a value.
+   curly braces denote that it is a dictionary.
+   >>>dict[key] ==> o/p is the value of that key.
 
 
 
