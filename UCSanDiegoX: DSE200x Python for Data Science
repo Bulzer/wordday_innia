@@ -157,6 +157,30 @@ String Functions:
            Eg: s = 'helli'
                s[1:3] ==> o/p : 'el' i.e 1st index inclusive and 3rd index exclusive
               *lly s[4:7] ==> no error o/p = 'i'
+              *lly -ve index ==> s[-4:-1] ==> o/p = 'ell' 
+                  How -ve index works is ==> when ever we give -ve index ==> the new index is calculated as string length plus index.
+                  i.e here -4 ==> 5+(-4) ==> 1
+                           -1 ==> 5+(-1) ==> 4 ==> s[-4:-1] becomes s[1:4]
+      i)Substring:
+         a)to check if a string is part of a string ==> Eg: s='Hello'
+                                                            'HE' in s ==> o/p = False
+                                                            'He' in s ==> o/p = True
+         b)we can use find() fn to get the position of the substring
+           Syntax: find(sub[,start[,end]]) ==> Returns the lowest index in the String where the substring is found.Returns -1 on failure.Defaults for Start and End are the entire string
+           Eg: s.find('el') ==> o/p = 1(since the lowest index of substring starts from 'e' which is at index #1)
+      j)String Formatting:
+         If we want to insert some data in a large chunk of string ==> s= 'we love {} {}.'
+                                                                       s.format('data','Analytics') ==> o/p = we love data Analytics.(i.e by default it takes them as 0th and 1st argument.
+                           It works as taking the arguments as well i.e like this ==> s = 'we love {0} {1}.'
+                                                                              ==> first word comes at 0th argument and 2nd word comes at 1st argument after we use s.format('data','Analytics') giving the o/p we love data Analytics.  
+                                                                              ==> if we give as s = 'we love {0} {1}.' ==> o/p = we love Analytics data.
+      j)Convert to Number
+         Eg: s="1234'
+             int(s) ==> o/p = 1234
+             float(s) ==> o/p = 1234.0
+             s = 'Hi'
+             int(s) ==> error
+         
       
       
 Common types in Python:
@@ -190,6 +214,45 @@ Functions:
 *If we dont return a value from a fn ==> by default it returns 'None'.
 
 
+Lists:
+------
+List in python is similar to array list in Java.
+List are Resizable i.e we can extend or reduce them anytime.
+List elements have indexes, which, like strings,start at zero.
+we can also Slice the lists llr to the Strings.
+**Lists are Mutable but Strings are not
+Index out of Range Error ==> occurs if we access an index in the list which is not present in the size of the List. Eg: List1 = [1,2,3] ==> If we ask List1[3] ==> Error-Index out of Range.
+To iterate over the list ==>use for loop i.e for i in list1: (llr to optimized for loop in Java)
+(we can also iterate like: for i in range(0,len(list1)): (llr to java normal for loop) i.e it says to iterate from 0 to length of list1
+Delete: to delete an element in list by its index ==> use POP fn Eg: List1.pop(2) ==> removes an element at 2nd index and shift other elements after 2nd index by 1.
+        to delete an element in list by its value ==> use REMOVE fn Eg :List1.remove(335667) ==>removes an element at 2nd index and shift other elements after 2nd index by 1.
+Add: to delete an element in list ==> use POP fn Eg: List1.append(1232) ==> adds an element at the end of the List with value 1232
+Adding 2 lists ==> use EXTEND fn Eg: list1.extend(list2) ==> elements of list2 are added to list1.
+  *** Be careful not to mix up append and extend.
+      Append adds an element to the end of the list.
+      Extend expands all appends all of the elements from one list into the either.
+       Eg: Say we have list2=[5,6,7] and list1= [1,2,3,4]
+       ==> list1.extend(list2) ==> print list1 ==> o/p = [1,2,3,4,5,6,7]   ==> list1 has total 7 elements those are all integers.
+       ==> list1.append(list2) ==> print list1 ==> o/p = [1,2,3,4,[5,6,7]] ==> list1 has toeal 4 elements those are 3 integers and a list
+ZIP fn : mostly used when we are dealing with 2 lists
+      Eg:for x,y in zip(list1,list2);
+             print(x,",",y)
+ Q)what if we have diff sizes of lizt and we use the zip fn as above to get x,y pairs ? 
+ Sol: Test in python and update.
+ Q)x = [10,20,30]
+   y = x
+   x[1] = 42
+   print(y)
+ Options : a) [10, 20, 30]   b)[10, 42, 30]
+ Sold : B
+ Description: this happened because Lists are Mutable unlike Strings. when we sat y=x ==> both the references point to the same Object
+              To over come this (or) to have a separate copy of Y with the present content of X ==> use Y=list(x) ==> this we even if the value of X changes over time it wont impact the value of Y.
+       *******(This issues when we have to process a value which changes time to time)(draw Memory diagrams for easy understanding and debugging)
+
+
+Tuples:
+-------
+
 
 
 
@@ -202,5 +265,6 @@ Notes:
 *2)x is created on the stack,and the PyIntObject with the value of three will be created on the heap.
 **3)The stack holds your local variables and is managed by your program,whereas the heap holds dynamically created data and is actually managed by the operating system.
   4)Draw memory diagrams to Analyse the codes ==> it will be easier to understand
-  5)the colon, in loops after condition,says to execute the statements indented after this line,should that condition be true. 
+  5)the colon, in loops after condition,says to execute the statements indented after this line,should that condition be true.
+**6)Lists are Mutable but Strings are not
 
