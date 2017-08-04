@@ -329,6 +329,10 @@ B)Dictionary Comprehension:
  ==> >>>dict = {i: chr(i) for i in range(65,90) }  ==> o/p = {65:'A',66:'B'........,90:'Z'}
  
  
+ Sets In Python:
+ --------------
+ 
+ 
  
  
 Questions:
