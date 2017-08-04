@@ -326,6 +326,7 @@ B)Dictionary Comprehension:
  Eg:>>> dict1 = {i: i**2 for i in range(1,11)}
  Q)Build a dictionary of letters from capital A to capital Z as values and their corresponding numeric asking values as the key?
  Sol:(hint:use CHR fn)
+ ==> >>>dict = {i: chr(i) for i in range(65,90) }  ==> o/p = {65:'A',66:'B'........,90:'Z'}
  
  
  
