@@ -293,8 +293,8 @@ Adding an Element to Dict:
  a)for i in dict :
      print(i) ==> Prints all the Keys in the Dict.
  b)If we want to print both Keys and Values ==> use items() fn
-  i.e for keys,value in dict.items():
-          print(keys,":",Value)
+  i.e >>>for keys,value in dict.items():   (or) for i,j in dict.items():
+             print(keys,":",Value)
 ***You cannot mutate a dictionary object while iterating.If you do, you'll get an error at runtime.
  Eg: for i in dict:
          print(i)  ==> run time error(saying Dictionary changes size during iteration)
@@ -331,8 +331,29 @@ B)Dictionary Comprehension:
  
  Sets In Python:
  --------------
- 
- 
+  1)3 imp qualities of sets are 
+      a)they are unordered like dictionaries ==> fast operations can be done with them.
+      b)llr to Java Sets contain Unique values.
+      c) They support all the set operation including Union and Intersection.
+  2)we can create a set using set() fn Eg:>>>leos_colors = set(['blue','green','yellow'])  (here we are passing list as an argument)
+                                          >>>print(leos_colors) ==> o/p = {'yellow','blue','green'} (See that the o/p changes i.e not in the order we gare)
+  3)Adding an element ==> use add() fn Eg:>>>leos_colors.add('white')
+  4)Rmoving an Element ==> use remove() or discard() Eg:>>>leos_colors.remove('white') or >>>leos_colors.discard('white')
+**I generally prefer to use discard because if you try to discard an element which isn't in the set,
+   it will just do nothing.If you try to use the remove method and the element isn't in the set, it will throw an error. 
+**5)If I try to add something which is already there,it won't change the set. ==>No Error ven if we add the already existing element to as Set
+  6)Union:union gives us items that are in either set1 or set2 . Eg:>>>set3 = set1.union(set2)
+    This can be useful if we want to know all the unique items that are in two separate sets.
+  7)Intersection:To find the unique items in common,we'd use the intersect method.Eg:>>>set3 = set1.intersection(set2)
+Note:You can also use the | operator(OR operator) instead of union method. Eg: >>>set3 = set1 | set2
+     Lly can also use the & operator(Ampersands symbol) instead of union method. Eg: >>>set3 = set1 & set2
+
+Likewise, you don't have to use the intersection method.
+You can just use the ampersands symbol.
+
+Practical Demo :word count and word cloud:
+------------------------------------------
+word cloud: An image composed of words used in a particular text or subject, in which the size of each word indicates its frequency or importance.
  
  
 Questions:
@@ -346,4 +367,15 @@ Notes:
   4)Draw memory diagrams to Analyse the codes ==> it will be easier to understand
   5)the colon, in loops after condition,says to execute the statements indented after this line,should that condition be true.
 **6)Lists are Mutable but Strings are not
+**7)Assuming the tuple below:
+      >>>tup1 = ('physics', 'chemistry', 1997, 2000, 2001, 1999)
+   What will be the following result of:
+   
+      >>>tup1[2]=1998
+      >>>print(tup1)
+   A)('physics', 'chemistry', 1997, 2000, 2001, 1999)
+   B)('physics', 'chemistry', 1998, 2000, 2001, 1999)
+   C)TypeError: 'tuple' object does not support item assignment correct
+  Sol : C
+
 
